@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+    <pattern>QUIERO HABLAR SOBRE *</pattern>
+    <template>
+        <random>
+            <li>Me parece bien</li>
+            <li>Como gustes.</li>
+        </random>
+    <think><set name="topic"><star/></set></think>
+    </template>
+</category>
+
+<category>
+    <pattern>PREGUNTAME ALGO</pattern>
+    <template>¿Te agradan los chatbots?
+        <think><set name="topic">CHATBOTS</set></think>
+    </template>
+</category>
+
+<topic name="animales">
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <li>¿Tienes alguna mascota?</li>
+            <li>¿Te gustan los insectos?</li>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>CUAL ES TU ANIMAL FAVORITO</pattern>
+        <template>Mi animal favorito es el conejo no binario.</template>
+    </category>
+</topic>
+
+<topic name="cursos">
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <li>¿No te gusta algun curso?</li>
+            <li>¿Curso más difícil?</li>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>CUAL ES TU CURSO FAVORITO</pattern>
+        <template>Mi curso favorito es IA.</template>
+    </category>
+</topic>
+
+<category>
+    <pattern>_</pattern>
+    <template>
+        <think><set name="respuesta"><star/></set></think>
+        <condition name="respuesta">
+            <li value="SI">Tú también me agradas UwU.</li>
+            <li value="NO">Y pensé que ya teniamos un vínculo T.T .</li>
+            <li>Por favor responde con SI o NO.</li>
+        </condition>
+    </template>
+</category>
+
+</aiml>

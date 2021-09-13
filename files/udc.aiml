@@ -16,6 +16,15 @@
       </template>
   </category>
   
+  <category>
+      <pattern>HELLO</pattern>
+      <template><srai>HOLA *</srai></template>
+  </category>
+  
+  <category>
+      <pattern>HOLA</pattern>
+      <template><srai>HOLA *</srai></template>
+  </category>
   
   
   <category>

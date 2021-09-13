@@ -30,9 +30,4 @@
       <template>Tu apellido es <get name="apellido"></get>.</template>
   </category>
   
-  <category>
-      <pattern></pattern>
-      <template></template>
-  </category>
-  
 </aiml>

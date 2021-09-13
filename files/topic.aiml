@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
+<!--Separando las respuestas de acuerdo a un tema en específico-->
 <category>
     <pattern>QUIERO HABLAR SOBRE *</pattern>
     <template>
@@ -8,23 +9,25 @@
             <li>Me parece bien</li>
             <li>Como gustes.</li>
         </random>
-    <think><set name="topic"><star/></set></think>
+    <think><set name="topic"><star/></set></think>     <!--Tema del que se quiere hablar y al cual se dirigirá-->
     </template>
 </category>
 
 <category>
-    <pattern>PREGUNTAME ALGO</pattern>
+    <pattern>PREGUNTAME ALGO</pattern>               <!--Otro tema-->
     <template>¿Te agradan los chatbots?
         <think><set name="topic">CHATBOTS</set></think>
     </template>
 </category>
 
-<topic name="animales">
+<topic name="animales">        <!--tema animales-->
     <category>
-        <pattern>*</pattern>
+        <pattern>*</pattern>        <!--Si se responde algo diferente al señalado.-->
         <template>
-            <li>¿Tienes alguna mascota?</li>
-            <li>¿Te gustan los insectos?</li>
+            <random>
+                <li>¿Tienes alguna mascota?</li>
+                <li>¿Te gustan los insectos?</li>
+            </random>
         </template>
     </category>
     
@@ -34,9 +37,9 @@
     </category>
 </topic>
 
-<topic name="cursos">
+<topic name="cursos">        <!--tema cursos-->
     <category>
-        <pattern>*</pattern>
+        <pattern>*</pattern>   <!--Si se responde algo diferente al señalado.-->
         <template>
             <li>¿No te gusta algun curso?</li>
             <li>¿Curso más difícil?</li>
@@ -49,15 +52,15 @@
     </category>
 </topic>
 
-<topic name="chatbots">
+<topic name="chatbots">          <!--tema chatbots-->
     <category>
-        <pattern>_</pattern>
+        <pattern>_</pattern>         <!--cualquier respuesta-->
     <template>
         <think><set name="respuesta"><star/></set></think>
         <condition name="respuesta">
-            <li value="SI">Tú también me agradas UwU.</li>
-            <li value="NO">Y pensé que ya teniamos un vínculo T.T .</li>
-            <li>Por favor responde con SI o NO.</li>
+            <li value="SI">Tú también me agradas UwU.</li>    <!--responde SI-->
+            <li value="NO">Y pensé que ya teniamos un vínculo T.T .</li> <!--responde NO-->
+            <li>Por favor responde con SI o NO.</li>       <!--cualquier otra respuestas-->
         </condition>
     </template>
     </category>

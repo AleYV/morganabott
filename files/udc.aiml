@@ -16,6 +16,8 @@
       </template>
   </category>
   
+  
+  
   <category>
       <pattern>HAZME UNA PREGUNTA</pattern>
       <template>
@@ -88,13 +90,56 @@
   
   <category>
       <pattern>CUAL ES TU EDAD</pattern>
-      <template>Mi edad es 1 día.</template>
+      <template>Mi edad es <bot name="edad"/> día.</template>
   </category>
   
   <category>
       <pattern>CUAL ES TU NOMBRE</pattern>
-      <template>Mi nombre es Morganabott.</template>
+      <template>Mi nombre es <bot name="nombre"/>.</template>
   </category>
   
+  <category>
+      <pattern>_ CREADOR</pattern>
+      <template>Mi creador es <bot name="creador"/>.</template>
+  </category>
+  
+  <category>
+      <pattern>QUIEN ES <bot name="creador"/></pattern>
+      <template>Es mi creador.</template>
+  </category>
+  
+  <category>
+      <pattern>QUIEN ES *</pattern>
+      <template>No tengo la más mínima idea.</template>
+  </category>
+  
+  <category>
+      <pattern>MI NOMBRE ES *</pattern>
+      <template>
+          Hola <set name="primernombre"><star/></set>.
+          <condition name="primernombre">
+              <li value="morganabott"> Ese es mi nombre también!</li>
+              <li value="alesandra"> Tienes el mismo nombre que mi creador.</li>
+              <li>Bonito nombre.</li>
+          </condition>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>ME LLAMO *</pattern>
+      <template>
+          <srai>MI NOMBRE ES <star/></srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CUAL ES MI NOMBRE</pattern>
+      <template>
+          <condition name="primernombre">
+              <li value="unknown">No tengo la menor idea, todavía no me lo has dicho.</li>
+              <li>Tu nombre es <get name="primernombre"/></li>
+          </condition>
+      </template>
+  </category>
 
 </aiml>

@@ -49,8 +49,9 @@
     </category>
 </topic>
 
-<category>
-    <pattern>_</pattern>
+<topic name="chatbots">
+    <category>
+        <pattern>_</pattern>
     <template>
         <think><set name="respuesta"><star/></set></think>
         <condition name="respuesta">
@@ -59,6 +60,8 @@
             <li>Por favor responde con SI o NO.</li>
         </condition>
     </template>
-</category>
+    </category>
+    
+</topic>
 
 </aiml>

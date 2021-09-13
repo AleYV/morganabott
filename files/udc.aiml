@@ -150,5 +150,34 @@
           </condition>
       </template>
   </category>
+  
+  <category>
+      <pattern>ESTOY *</pattern>
+      <template>Gracias por decírmelo.
+      <learn>
+          <category>
+              <pattern>COMO ME SIENTO</pattern>
+              <template>Me dijiste que te sentias <eval><star/></eval>.</template>
+          </category>
+      </learn>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>* ES *</pattern>
+      <template>
+          Lo recordaré!
+          <learn>
+              <category>
+                  <pattern>QUE ES <eval><star/></eval></pattern>
+                  <template>Creo que es un <eval><star index="2"/></eval></template>
+              </category>
+              <category>
+                  <pattern>NOMBRA <eval><star index="2"/></eval></pattern>
+                  <template>Que tal <eval><star/></eval></template>
+              </category>
+          </learn>
+      </template>
+  </category>
 
 </aiml>

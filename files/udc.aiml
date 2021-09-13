@@ -6,19 +6,72 @@
   </category>
   
   <category>
-    <pattern>HOLA *</pattern>
-    <template>Buenas extrellita! Este bot te dice hola!</template>
+      <pattern>HOLA *</pattern>
+      <template>
+          <random>
+              <li>Buenas extrellita! Este bot te dice hola!</li>
+              <li>Hola hola! Un gusto en saludarte</li>
+              <li>Hola mundo!</li>
+          </random>
+      </template>
   </category>
+  
+  <category>
+      <pattern>HAZME UNA PREGUNTA</pattern>
+      <template>
+          ¿Te gusta el helado?
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HAZME OTRA PREGUNTA</pattern>
+      <template>
+          ¿Te gusta la playa?
+      </template>
+  </category>
+  
+  <category>
+      <that>_ HELADO</that>
+      <pattern>SI</pattern>
+      <template>A mi también. Nunca eh probado uno pero mi sabor de helado favorito es vainilla.</template>
+  </category>
+  
+  <category>
+      <that>_ HELADO</that>
+      <pattern>NO</pattern>
+      <template>Buu, tienes pésimo gusto.</template>
+  </category>
+  
+  <category>
+      <that>_ PLAYA</that>
+      <pattern>SI</pattern>
+      <template>Al menos alguien lo disfruta. Yo no puedo nadar.</template>
+  </category>
+  
+  <category>
+      <that>_ PLAYA</that>
+      <pattern>NO</pattern>
+      <template>Ya somos dos.</template>
+  </category>
+  
+  
+  <category>
+      <pattern>LANZA UNA MONEDA</pattern>
+      <template>
+          Salió: 
+          <random>
+              <li> cara</li>
+              <li> sello</li>
+          </random>
+      </template>
+  </category>
+  
   
   <category>
     <pattern>MI NOMBRE ES * *</pattern>
     <template>Encantada de conocerte <set name="nombre"><star/></set> <set name="apellido"><star index="2"/></set>.</template>
   </category>
   
-  <category>
-    <pattern>_ COLOR *</pattern>
-    <template>A mi me gusta el color <star index="2"></star> ,es muy bonito.</template>
-  </category>
   
   <category>
       <pattern>CUAL ES MI  NOMBRE</pattern>
@@ -30,4 +83,26 @@
       <template>Tu apellido es <get name="apellido"></get>.</template>
   </category>
   
+  <category>
+      <pattern>RANDOM</pattern>
+      <template>
+          <think>
+          <set name="persona">
+              <random>
+                  <li>Susana</li>
+                  <li>Catalina</li>
+                  <li>Steven</li>
+                  <li>Sebastian</li>
+              </random>
+          </set>
+          </think>
+          <random>
+              <li><get name="persona"></get> entregó tarde su tarea.</li>
+              <li>Solo <get name="persona"></get> pensaría que los chanchos vuelan.</li>
+              <li>Según <get name="persona"></get>, la contaminación ambiental es un mito.</li>
+          </random>
+      </template>
+  </category>
+  
+
 </aiml>
